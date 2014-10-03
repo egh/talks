@@ -144,4 +144,20 @@ BibTeX file:
 <iframe width="600px" src="table.html"></iframe>
 
 ## End ##
+# Advanced: filter
+
+## The filter
+
+~~~{.python include=filter.py}
+~~~
+
+## The markdown
+
+~~~{include=eval.md}
+~~~
+
+## The output
+
+<iframe width="600px" height="600px" src="eval.html"></iframe>
+
 
