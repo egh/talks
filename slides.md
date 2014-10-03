@@ -103,8 +103,8 @@ Supports many languages, from Ada to zsh.
 
 *Input*
 
-```{include=math.md}
-```
+~~~{include=math.md}
+~~~
 
 *Output*
 
@@ -113,7 +113,8 @@ Supports many languages, from Ada to zsh.
 ## Citations: markdown ##
 
 BibTeX file:
-```
+
+~~~
 @article{moran:2014eyeless,
   title = {Eyeless Mexican Cavefish Save Energy
     by Eliminating the Circadian Rhythm in Metabolism},
@@ -121,12 +122,12 @@ BibTeX file:
   url = {http://dx.doi.org/10.1371%2Fjournal.pone.0107877},
   …
 }
-```
+~~~
 
 *Input*
 
-```{include=citations.md}
-```
+~~~{include=citations.md}
+~~~
 
 *Output*
 
@@ -136,14 +137,13 @@ BibTeX file:
 
 *Input*
 
-```{include=table.md}
-```
+~~~{include=table.md}
+~~~
 
 *Output*
 
 <iframe width="600px" src="table.html"></iframe>
 
-## End ##
 # Advanced: filter
 
 ## The filter
@@ -160,4 +160,5 @@ BibTeX file:
 
 <iframe width="600px" height="600px" src="eval.html"></iframe>
 
+## End ##
 
