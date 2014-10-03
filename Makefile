@@ -8,5 +8,5 @@ reveal.js:
 	pandoc -t html5 --mathjax -s --bibliography=slides.bibtex --csl=plos.csl -F ./filter.py $< -o $@
 
 clean:
-	rm *.html 
-	rm *.png
+	rm -f *.html 
+	rm -f *.png
