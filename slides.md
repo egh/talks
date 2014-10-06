@@ -56,6 +56,17 @@ Supports all your basic markdown features:
 - s~ub~ and s^uper^script (`s~ub~ and s^uper^script`)
 - lists
 
+## Links
+
+*Input*
+
+~~~~ {include="links.md"}
+~~~~
+
+*Output*
+
+<iframe width="600px" height="600px" src="links.html"></iframe>
+
 ## Figures ##
 
 *Input*

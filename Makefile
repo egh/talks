@@ -1,4 +1,4 @@
-slides.html: citations.html eval.html figures.html footnotes.html highlighting.html math.html table.html reveal.js slides.md
+slides.html: citations.html eval.html figures.html footnotes.html highlighting.html links.html math.html table.html reveal.js slides.md
 	pandoc -t revealjs -c extra.css -c reveal.js/css/theme/sky.css --mathjax --section-divs --bibliography=slides.bibtex --slide-level=2 --csl=plos.csl --filter ./includes.hs -s slides.md -o slides.html
 
 reveal.js:
