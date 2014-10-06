@@ -14,6 +14,10 @@ author: Erik Hetzner
     - tables
     - templates
 
+*Try it now!*
+
+<http://johnmacfarlane.net/pandoc/try/>
+
 ## Input formats
 
 - docbook
@@ -104,7 +108,7 @@ Supports many languages, from Ada to zsh.
 
 ## $M^{a}_{(th)}$ ##
 
-- pandoc uses $\TeX$-math
+- pandoc uses $\TeX$-math as input
 - outputs to:
     - MathJAX
     - MathML
@@ -121,7 +125,7 @@ Supports many languages, from Ada to zsh.
 
 <iframe width="600px" src="math.html"></iframe>
 
-## Citations: markdown ##
+## Citations
 
 BibTeX file:
 
