@@ -50,6 +50,22 @@ author: Erik Hetzner
 - turn `.docx` files into markdown
 - make slides (like these)
 
+## Usage
+
+*Basic*
+
+~~~{.sh}
+$ pandoc slides.md # outputs HTML
+~~~
+
+*Advanced*
+
+~~~{.sh}
+$ pandoc -t revealjs -c extra.css -c reveal.js/css/theme/sky.css --mathjax \
+  --section-divs --bibliography=slides.bibtex --slide-level=2 \
+  --csl=plos.csl -s slides.md -o slides.html
+~~~
+
 ## Markdown ##
 
 Supports all your basic markdown features:
