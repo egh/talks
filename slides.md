@@ -66,15 +66,15 @@ $ pandoc -t revealjs -c extra.css -c reveal.js/css/theme/sky.css --mathjax \
   --csl=plos.csl -s slides.md -o slides.html
 ~~~
 
-## Markdown ##
+<!-- ## Markdown ## -->
 
-Supports all your basic markdown features:
+<!-- Supports all your basic markdown features: -->
 
-- *emphasis* (`*emphasis*`)
-- `monospace` (`` `monospace` ``)
-- ~~strikeout~~ (`~~strikeout~~`)
-- s~ub~ and s^uper^script (`s~ub~ and s^uper^script`)
-- lists
+<!-- - *emphasis* (`*emphasis*`) -->
+<!-- - `monospace` (`` `monospace` ``) -->
+<!-- - ~~strikeout~~ (`~~strikeout~~`) -->
+<!-- - s~ub~ and s^uper^script (`s~ub~ and s^uper^script`) -->
+<!-- - lists -->
 
 ## Links
 
@@ -175,9 +175,94 @@ BibTeX file:
 
 <iframe width="600px" src="table.html"></iframe>
 
-# Advanced: filter
+## Internals
 
-## The filter
+Pandoc uses an internal tree structure which different readers and
+writers either generate or write from
+
+## Readers
+
+~~~{.html}
+<p><i>hello world</i></p>
+~~~
+
+or
+
+~~~{.md}
+*hello world*
+~~~
+
+or
+
+~~~{.latex}
+\emph{hello world}
+~~~
+
+or `docx`, `docbook`, … becomes:
+
+~~~
+[Para
+  [Emph
+    [Str "hello", Space, Str "world"]]]
+~~~
+
+## Writers
+
+~~~
+[Para
+  [Emph
+    [Str "hello", Space, Str "world"]]]
+~~~
+
+becomes:
+
+~~~
+.PP
+\f[I]hello world\f[]
+~~~
+
+(man) or
+
+~~~
+{\pard \ql \f0 \sa180 \li0 \fi0 {\i hello world}\par}
+~~~
+
+(rtf) or
+
+~~~
+<para><emphasis>hello world</emphasis></para>
+~~~
+
+(docbook) or markdown, html, …
+
+## JSON
+
+pandoc has a JSON reader/writer that encodes the native format:
+
+~~~{.json}
+[
+  { "unMeta": null },
+  [ { "t": "Para",
+      "c": [ { "t": "Emph",
+               "c": [ { "t": "Str",
+                        "c": "hello"
+                      },
+                      { "t": "Space",
+                        "c": []
+                      },
+                      { "t": "Str",
+                        "c": "world"
+                        } ] } ] } ] ]
+~~~
+
+## Filters
+
+This functionality allows you to write filters that input one JSON
+tree and output another JSON tree.
+
+Citations support is written as a filter.
+
+## Filter example
 
 ~~~{.python include=filter.py}
 ~~~
@@ -190,6 +275,26 @@ BibTeX file:
 ## The output
 
 <iframe width="600px" height="600px" src="eval.html"></iframe>
+
+## Custom writers
+
+You can write custom outputs writers in Lua. This is a snippet from
+Martin Fenner’s test JATS writer:
+
+~~~{.lua}
+…
+function Para(s)
+  return "<p>" .. s .. "</p>"
+end
+
+function RawBlock(s)
+  return "<preformat>" .. s .. "</preformat>"
+end
+…
+~~~
+
+Since Lua is an interpreted language, these can be loaded into a
+running pandoc process.
 
 ## End ##
 
