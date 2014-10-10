@@ -10,3 +10,8 @@ reveal.js:
 clean:
 	rm -f *.html 
 	rm -f *.png
+
+push: slides.html
+	s3cmd put -Pf --exclude=.git --recursive reveal.js/ s3://www.e6h.org/tmp/pandoc-techtalk/reveal.js/
+	s3cmd put -Pf *.html *.png *.jpeg *.css s3://www.e6h.org/tmp/pandoc-techtalk/
+
