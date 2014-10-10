@@ -10,7 +10,7 @@ def evalR(key, value, fmt, meta):
         figfile = "%s.png" % (uuid.uuid4())
         exec(value[1])
         savefig(figfile)
-        return Para([Image([{"t": "Str", "c": "Output"}], [figfile, "fig:"])])
+        return Para([Image([Str("Output")], [figfile, "fig:"])])
 
 if __name__ == "__main__":
     toJSONFilter(evalR)

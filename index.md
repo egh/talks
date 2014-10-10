@@ -7,12 +7,11 @@ author: Erik Hetzner
 
 - “a universal document converter”
 - at its core, a tool to turn transform documents *to* and *from*
-    pandoc enhanced markdown
+    an internal document tree
 - so many useful features
     - math
     - complex citations
     - tables
-    - templates
 
 *Try it now!*
 
@@ -44,11 +43,11 @@ author: Erik Hetzner
 - opendocument
 - … and much more
 
-## What can I do? ##
+<!-- ## What can I do? ## -->
 
-- turn markdown into `.docx`, HTML, $\LaTeX$, PDF, …
-- turn `.docx` files into markdown
-- make slides (like these)
+<!-- - turn markdown into `.docx`, HTML, $\LaTeX$, PDF, … -->
+<!-- - turn `.docx` files into markdown -->
+<!-- - make slides (like these) -->
 
 ## Usage
 
@@ -124,12 +123,14 @@ Supports many languages, from Ada to zsh.
 
 ## $M^{a}_{(th)}$ ##
 
-- pandoc uses $\TeX$-math as input
+- inputs from:
+    - $\TeX$-math as input for markdown
+    - `docx` native formulas
 - outputs to:
     - MathJAX
     - MathML
-    - Native formulas in `docx`
-
+    - `docx` native formulas 
+    
 ## Example ##
 
 *Input*
@@ -279,7 +280,7 @@ Citations support is written as a filter.
 ## Custom writers
 
 You can write custom outputs writers in Lua. This is a snippet from
-Martin Fenner’s test JATS writer:
+Martin Fenner’s proof of concept JATS writer:
 
 ~~~{.lua}
 …
@@ -293,8 +294,8 @@ end
 …
 ~~~
 
-Since Lua is an interpreted language, these can be loaded into a
-running pandoc process.
+Since Lua is an interpreted language, these can be loaded without
+compilation.
 
 ## End ##
 
