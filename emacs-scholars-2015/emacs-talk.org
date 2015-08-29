@@ -1,0 +1,136 @@
+#+OPTIONS: num:nil toc:1
+#+AUTHOR: Erik Hetzner
+#+EMAIL: egh@e6h.org
+#+TITLE: Making Emacs a better tool for scholars
+* Abstract                                                         :noexport:
+
+Many scientists and humanists are beginning to believe that the best
+way to ensure the longevity of their research is by using plain text
+formats. Reproducible research, where code and data and published
+alongside an article, is also gaining popularity. Emacs is highly
+suited to implementing these solutions. I will explore ways that we
+can help support scholars who use Emacs.
+* Personal note
+- I work for the Public Library of Science (PLOS), an open access
+  science publisher
+- Before that, I worked for 8 years at the California Digital Library
+  at the University of California
+- I’ve been using GNU Emacs for 20 years 😮
+- I expect to be using something like it for the rest of my life
+- These are my personal experiences, as an Emacs user who has worked
+  to support scholars and librarians
+* Introduction
+- Scientists and humanists need better tools: we can help them
+- The needs of scholars and programmers are remarkably similar
+- To scholars (and writers): Emacs might be a tool worth learning
+* Misgivings
+- I have never really been an Emacs advocate
+- Emacs has a (somewhat deserved) reputation for being difficult
+- Can Emacs work for “normal” people?
+- I’m a tools nerd: probably we all are
+  - but many (most?) people just want to get on with their work
+* On the other hand
+- The forward movement on Emacs in the past few years has been
+  *amazing*: thank you.
+  - easily installed packages
+  - testing
+  - new projects with excellent UIs (magit, helm, etc.)
+- Emacs comes from an alternate universe of stable,
+  backwards-compatible, extensible software
+  - there isn’t much like it
+- Emacs is here, now, solving problems
+* Emacs, some thoughts                                             :noexport:
+- GNU Emacs is 30 years old!
+- Emacs (generally) is 40 years old
+* Scholars & programmers
+- In many ways, our needs are similar
+- Things that Emacs handles well:
+** Long term
+- some aspects of our jobs are constantly changing, but others will
+  remain throughout our careers
+- as we learn new things, we need to keep some things the same
+- we need tools that last, tools that grow with us
+** Refactoring
+- Writing is all about refactoring
+  - moving around text
+  - rewriting
+  - reorganizing
+** Version control, collaboration
+- All authors need version control, but they don’t have it
+- Scientific writing is all about collaboration
+  - But most authors still email draft versions back & forth
+** Compilation
+- almost every modern article, book, etc. will require some sort of
+  “compilation process”
+  - generating citations
+  - generating figures, graphs, charts
+  - managing cross references
+  - targeting multiple platforms (e-readers, print, web)
+** Coding
+- an increasing part of scientific work
+- computational biology
+- physics
+- computer science
+- data science
+** Cross references, linking, searching, completion
+- completion
+  - people out there are still typing names, references, etc. by hand!
+- cross references
+- finding a needle in your project haystack
+- managing code bases/projects consisting of lots of files
+* Reproducible research
+- The idea that data & code should be published along with an article
+- Bringing software engineering to science
+- Solutions often similar to literate programming
+- Solutions:
+  - org-mode (babel)
+  - knitr
+  - ipython
+* Packages
+** org-mode
+- Emacs’s secret weapon
+- Written by an astronomer!
+- Probably brings more scholars to Emacs than anything else
+** org-mode (babel)
+Org mode combined with =babel= allows users to execute code from
+within an Org mode document
+
+[file:org-mode-babel.gif]
+** org-ref + helm-bibtex
+A system for managing references and citations in Org mode.
+
+[[https://github.com/jkitchin/org-ref][org-ref]] was written by John Kitchin.
+
+[[https://github.com/tmalsburg/helm-bibtex][helm-bibtex]] by Titus von der Malsburg
+
+[file:org-ref.gif]
+** pandoc
+- not emacs, but an amazing tool
+- rapidly gaining popularity among scholars
+- converts from markdown, Org mode, etc. to Word, ODT, HTML, LaTeX, etc.
+- supports citations, cross references, etc.
+* Latex v. plain text
+- Many scientists use LaTeX now, and Emacs makes a great editor
+- Others are beginning to use markdown
+  - pandoc has become an amazing tool
+    - supports many output formats
+    - supports citations (non-BibTeX)
+- Emacs LaTeX support is great
+- Org mode can output to LaTeX and markdown and many other formats
+  - But the toolchains can be fragile and are still new
+* Conclusion
+- “[W]e should do more than gently explain to students that our
+  antiquated tools will eventually make them more productive. We
+  should apologize for not building something better, and promise to
+  try harder.” Greg Wilson,
+  http://software-carpentry.org/blog/2013/12/tools-conversations-and-cultures.html
+- Scientists and humanists need better tools: we can help them
+- The needs of scholars and programmers are remarkably similar
+- To scholars (and writers): Emacs might be a tool worth learning
+* References
+- http://software-carpentry.org/blog/2014/01/publishing-on-the-web.html
+- https://ropensci.org/blog/2014/06/09/reproducibility/
+- http://software-carpentry.org/blog/archives.html
+- http://software-carpentry.org/blog/2013/12/tools-conversations-and-cultures.html
+- http://pgbovine.net/two-cultures-of-computing.htm 
+- http://software-carpentry.org/blog/2011/12/fork-merge-and-share.html

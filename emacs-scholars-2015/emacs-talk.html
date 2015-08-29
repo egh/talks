@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Making Emacs a better tool for scholars</title>
+<meta name="author" content="(Erik Hetzner)"/>
+<link rel="stylesheet" href="./reveal.js/css/reveal.css"/>
+<link rel="stylesheet" href="./reveal.js/css/theme/moon.css" id="theme"/>
+<link rel="stylesheet" href=""/>
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = './reveal.js/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1>Making Emacs a better tool for scholars</h1>
+<h2>Erik Hetzner</h2>
+<h2><a href="mailto:egh@e6h.org">egh@e6h.org</a></h2>
+<h2></h2>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgheadline1">Personal note</a></li>
+<li><a href="#/slide-orgheadline2">Introduction</a></li>
+<li><a href="#/slide-orgheadline3">Misgivings</a></li>
+<li><a href="#/slide-orgheadline4">On the other hand</a></li>
+<li><a href="#/slide-orgheadline11">Scholars &amp; programmers</a></li>
+<li><a href="#/slide-orgheadline12">Reproducible research</a></li>
+<li><a href="#/slide-orgheadline17">Packages</a></li>
+<li><a href="#/slide-orgheadline18">Latex v. plain text</a></li>
+<li><a href="#/slide-orgheadline19">Conclusion</a></li>
+<li><a href="#/slide-orgheadline20">References</a></li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="slide-orgheadline1">
+<h2 id="orgheadline1">Personal note</h2>
+<ul>
+<li>I work for the Public Library of Science (PLOS), an open access
+science publisher</li>
+<li>Before that, I worked for 8 years at the California Digital Library
+at the University of California</li>
+<li>I’ve been using GNU Emacs for 20 years 😮</li>
+<li>I expect to be using something like it for the rest of my life</li>
+<li>These are my personal experiences, as an Emacs user who has worked
+to support scholars and librarians</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline2">
+<h2 id="orgheadline2">Introduction</h2>
+<ul>
+<li>Scientists and humanists need better tools: we can help them</li>
+<li>The needs of scholars and programmers are remarkably similar</li>
+<li>To scholars (and writers): Emacs might be a tool worth learning</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline3">
+<h2 id="orgheadline3">Misgivings</h2>
+<ul>
+<li>I have never really been an Emacs advocate</li>
+<li>Emacs has a (somewhat deserved) reputation for being difficult</li>
+<li>Can Emacs work for “normal” people?</li>
+<li>I’m a tools nerd: probably we all are
+<ul>
+<li>but many (most?) people just want to get on with their work</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline4">
+<h2 id="orgheadline4">On the other hand</h2>
+<ul>
+<li>The forward movement on Emacs in the past few years has been
+<b>amazing</b>: thank you.
+<ul>
+<li>easily installed packages</li>
+<li>testing</li>
+<li>new projects with excellent UIs (magit, helm, etc.)</li>
+
+</ul></li>
+<li>Emacs comes from an alternate universe of stable,
+backwards-compatible, extensible software
+<ul>
+<li>there isn’t much like it</li>
+
+</ul></li>
+<li>Emacs is here, now, solving problems</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline11">
+<h2 id="orgheadline11">Scholars &amp; programmers</h2>
+<ul>
+<li>In many ways, our needs are similar</li>
+<li>Things that Emacs handles well:</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline5">
+<h3 id="orgheadline5">Long term</h3>
+<ul>
+<li>some aspects of our jobs are constantly changing, but others will
+remain throughout our careers</li>
+<li>as we learn new things, we need to keep some things the same</li>
+<li>we need tools that last, tools that grow with us</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6">Refactoring</h3>
+<ul>
+<li>Writing is all about refactoring
+<ul>
+<li>moving around text</li>
+<li>rewriting</li>
+<li>reorganizing</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7">Version control, collaboration</h3>
+<ul>
+<li>All authors need version control, but they don’t have it</li>
+<li>Scientific writing is all about collaboration
+<ul>
+<li>But most authors still email draft versions back &amp; forth</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline8">
+<h3 id="orgheadline8">Compilation</h3>
+<ul>
+<li>almost every modern article, book, etc. will require some sort of
+“compilation process”
+<ul>
+<li>generating citations</li>
+<li>generating figures, graphs, charts</li>
+<li>managing cross references</li>
+<li>targeting multiple platforms (e-readers, print, web)</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-orgheadline9">
+<h3 id="orgheadline9">Coding</h3>
+<ul>
+<li>an increasing part of scientific work</li>
+<li>computational biology</li>
+<li>physics</li>
+<li>computer science</li>
+<li>data science</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline10">
+<h3 id="orgheadline10">Cross references, linking, searching, completion</h3>
+<ul>
+<li>completion
+<ul>
+<li>people out there are still typing names, references, etc. by hand!</li>
+
+</ul></li>
+<li>cross references</li>
+<li>finding a needle in your project haystack</li>
+<li>managing code bases/projects consisting of lots of files</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline12">
+<h2 id="orgheadline12">Reproducible research</h2>
+<ul>
+<li>The idea that data &amp; code should be published along with an article</li>
+<li>Bringing software engineering to science</li>
+<li>Solutions often similar to literate programming</li>
+<li>Solutions:
+<ul>
+<li>org-mode (babel)</li>
+<li>knitr</li>
+<li>ipython</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline17">
+<h2 id="orgheadline17">Packages</h2>
+<div class="outline-text-2" id="text-orgheadline17">
+</div></section>
+<section id="slide-orgheadline13">
+<h3 id="orgheadline13">org-mode</h3>
+<ul>
+<li>Emacs’s secret weapon</li>
+<li>Written by an astronomer!</li>
+<li>Probably brings more scholars to Emacs than anything else</li>
+
+</ul>
+</section>
+<section id="slide-orgheadline14">
+<h3 id="orgheadline14">org-mode (babel)</h3>
+<p>
+Org mode combined with <code>babel</code> allows users to execute code from
+within an Org mode document
+</p>
+
+<p>
+[<img src="org-mode-babel.gif" alt="org-mode-babel.gif" />]
+</p>
+</section>
+<section id="slide-orgheadline15">
+<h3 id="orgheadline15">org-ref + helm-bibtex</h3>
+<p>
+A system for managing references and citations in Org mode.
+</p>
+
+<p>
+<a href="https://github.com/jkitchin/org-ref">org-ref</a> was written by John Kitchin.
+</p>
+
+<p>
+<a href="https://github.com/tmalsburg/helm-bibtex">helm-bibtex</a> by Titus von der Malsburg
+</p>
+
+<p>
+[<img src="org-ref.gif" alt="org-ref.gif" />]
+</p>
+</section>
+<section id="slide-orgheadline16">
+<h3 id="orgheadline16">pandoc</h3>
+<ul>
+<li>not emacs, but an amazing tool</li>
+<li>rapidly gaining popularity among scholars</li>
+<li>converts from markdown, Org mode, etc. to Word, ODT, HTML, LaTeX, etc.</li>
+<li>supports citations, cross references, etc.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline18">
+<h2 id="orgheadline18">Latex v. plain text</h2>
+<ul>
+<li>Many scientists use LaTeX now, and Emacs makes a great editor</li>
+<li>Others are beginning to use markdown
+<ul>
+<li>pandoc has become an amazing tool
+<ul>
+<li>supports many output formats</li>
+<li>supports citations (non-BibTeX)</li>
+
+</ul></li>
+
+</ul></li>
+<li>Emacs LaTeX support is great</li>
+<li>Org mode can output to LaTeX and markdown and many other formats
+<ul>
+<li>But the toolchains can be fragile and are still new</li>
+
+</ul></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline19">
+<h2 id="orgheadline19">Conclusion</h2>
+<ul>
+<li>“[W]e should do more than gently explain to students that our
+antiquated tools will eventually make them more productive. We
+should apologize for not building something better, and promise to
+try harder.” Greg Wilson,
+<a href="http://software-carpentry.org/blog/2013/12/tools-conversations-and-cultures.html">http://software-carpentry.org/blog/2013/12/tools-conversations-and-cultures.html</a></li>
+<li>Scientists and humanists need better tools: we can help them</li>
+<li>The needs of scholars and programmers are remarkably similar</li>
+<li>To scholars (and writers): Emacs might be a tool worth learning</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgheadline20">
+<h2 id="orgheadline20">References</h2>
+<ul>
+<li><a href="http://software-carpentry.org/blog/2014/01/publishing-on-the-web.html">http://software-carpentry.org/blog/2014/01/publishing-on-the-web.html</a></li>
+<li><a href="https://ropensci.org/blog/2014/06/09/reproducibility/">https://ropensci.org/blog/2014/06/09/reproducibility/</a></li>
+<li><a href="http://software-carpentry.org/blog/archives.html">http://software-carpentry.org/blog/archives.html</a></li>
+<li><a href="http://software-carpentry.org/blog/2013/12/tools-conversations-and-cultures.html">http://software-carpentry.org/blog/2013/12/tools-conversations-and-cultures.html</a></li>
+<li><a href="http://pgbovine.net/two-cultures-of-computing.htm">http://pgbovine.net/two-cultures-of-computing.htm</a></li>
+<li><a href="http://software-carpentry.org/blog/2011/12/fork-merge-and-share.html">http://software-carpentry.org/blog/2011/12/fork-merge-and-share.html</a></li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="./reveal.js/lib/js/head.min.js"></script>
+<script src="./reveal.js/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: true,
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+});
+</script>
+</body>
+</html>
